@@ -31,7 +31,7 @@ CREATE TABLE `t_book`  (
   `introduce` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `picture` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp,
-  `state` int NOT NULL DEFAULT 1 COMMENT '1：表示未卖出\\n2：已卖出',
+  `state` int NOT NULL DEFAULT 1 COMMENT '1',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -59,10 +59,10 @@ CREATE TABLE `t_category`  (
 -- ----------------------------
 -- Records of t_category
 -- ----------------------------
-INSERT INTO `t_category` VALUES (1, 'book', '书籍漫画');
-INSERT INTO `t_category` VALUES (2, 'watch', '手表');
-INSERT INTO `t_category` VALUES (3, 'stamp', '邮票及钱币');
-INSERT INTO `t_category` VALUES (4, 'wine', '葡萄酒及威士忌');
+INSERT INTO `t_category` VALUES (1, 'book');
+INSERT INTO `t_category` VALUES (2, 'watch');
+INSERT INTO `t_category` VALUES (3, 'stamp');
+INSERT INTO `t_category` VALUES (4, 'wine');
 
 -- ----------------------------
 -- Table structure for t_order
@@ -98,7 +98,7 @@ CREATE TABLE `t_stamp`  (
   `introduce` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `picture` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp,
-  `state` int NOT NULL DEFAULT 1 COMMENT '1：表示未卖出\\n2：已卖出',
+  `state` int NOT NULL DEFAULT 1 ,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -123,7 +123,7 @@ CREATE TABLE `t_user`  (
   `address` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `bought_number` int NOT NULL DEFAULT 0,
   `auction_number` int NOT NULL DEFAULT 0,
-  `admin` int NOT NULL DEFAULT 1 COMMENT '0为管理员，1为普通用户',
+  `admin` int NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -147,7 +147,7 @@ CREATE TABLE `t_watch`  (
   `introduce` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `picture` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp,
-  `state` int NOT NULL DEFAULT 1 COMMENT '1：表示未卖出\\\\n2：表示卖出，默认为1',
+  `state` int NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -173,7 +173,7 @@ CREATE TABLE `t_wine`  (
   `introduce` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `picture` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp,
-  `state` int NOT NULL DEFAULT 1 COMMENT '1：表示未卖出\\n2：已卖出',
+  `state` int NOT NULL DEFAULT 1 ,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
