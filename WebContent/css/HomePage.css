@@ -1,0 +1,231 @@
+@charset "UTF-8";
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+html,body
+{
+	width: 100%;
+	height: 150%;
+	background: url(../img/123.jpg);
+}
+.HomePageTitle 
+{
+	width: 100%;
+	height: 3%;
+	background-color: #515154;
+}
+.HomePageTitle nav
+{
+	width: 80%;
+	height: 100%;
+/* 	background: yellow; */
+/* 	text-align:right; */
+    margin: 0 auto;
+}
+.HomePageTitle nav a
+{
+	display: block;
+	width: 10%;
+	height: 100%;
+	/*background: green*/
+	float: right;
+/* 	text-align:right; */
+/*     right:30%; */
+	text-align: center;
+	line-height: 40px;
+ 	color: white; 
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.ChangeBg
+{
+	background: rgb(192,2,103);
+}
+
+.HomePageTitle2
+{
+	width: 100%;
+	height: 8%;
+/* 	background: black; */
+}
+
+.Navigation1 
+{
+	width: 100%;
+	height: 2.5%;
+	background: #F08080;
+}
+
+.Navigation1 nav
+{
+	width: 80%;
+	height: 100%;
+/* 	background: yellow; */
+/* 	text-align:right; */
+    margin: 0 auto;
+}
+
+.Navigation1 nav a
+{
+	display: block;
+	width: 10%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+/* 	color: white; */
+	text-decoration: none;
+	cursor: pointer;
+}
+.popular
+{
+	position:relative;
+	top:33%;
+	width:100%;
+	height:20%;
+/* 	background:red; */
+}
+.PopularP1
+{   
+	position:relative;
+	top:5%;
+	font-size:30px;
+	font-weight:bold;
+	text-align:center;
+	color:red;	
+	padding-top:15px
+}
+.CategoryBox
+{
+	position:relative;
+	width:80%;
+	height:80%;
+	margin:2% auto;
+/* 	background:red; */
+}
+
+.CategoryBox div
+{
+	position: relative;
+	width: 20%;
+	height: 60%;
+	float: left;
+	overflow: hidden;
+	margin-left: 4%;
+	margin-top: 40px;
+/* 	background:black; */
+}
+
+.CategoryBox div img
+{
+	width: 100%;
+	height: 100%;
+	transition: all 0.2s;
+}
+
+.bookBox
+{
+	position:relative;
+/* 	top:32%; */
+	width:80%;
+	height:30%;
+	margin:35% auto;
+	border:1px solid #000;
+    background:#FAF0E6;
+}
+.bookBox .title
+{
+	font-size:22px;
+	font-weight:bold;
+}
+
+.bookBox a
+{
+	position: relative;
+	width: 20%;
+	height: 80%;
+	float: left;
+	overflow: hidden;
+	margin-left: 4%;
+	margin-top: 20px;
+	border:1px solid #000;
+    box-shadow:0 0 2px #000;
+	background:white;
+	text-decoration:none;
+	color:black;
+}
+
+
+a p
+{
+	font-size:13.5px;
+	font-weight:bold;
+}
+
+
+.bookBox a img {
+	width: 100%;
+	height: 80%;
+	transition: all 0.2s;
+}
+.p
+{
+	position:absolute;
+	bottom:2px;
+}
+/* stampbox */
+.stampBox
+{
+	position:absolute;
+	top:170%;
+	left:10%;
+	width:80%;
+	height:70%;
+	margin:35% auto;
+	border:1px solid #000;
+    background:#FAF0E6;
+}
+.stampBox .title
+{
+	font-size:22px;
+	font-weight:bold;
+}
+
+.stampBox a
+{
+	position: relative;
+	width: 20%;
+	height: 80%;
+	float: left;
+	overflow: hidden;
+	margin-left: 4%;
+	margin-top: 20px;
+	border:1px solid #000;
+    box-shadow:0 0 2px #000;
+	background:white;
+	text-decoration:none;
+	color:black;
+}
+
+
+a p
+{
+	font-size:13.5px;
+	font-weight:bold;
+}
+
+.stampBox a img
+{
+	width: 100%;
+	height: 80%;
+	transition: all 0.2s;
+}
+.p
+{
+	position:absolute;
+	bottom:2px;
+}
