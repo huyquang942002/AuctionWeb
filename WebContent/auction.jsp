@@ -14,15 +14,15 @@ if(session.getAttribute("user")==null){
 <title>Auction Web</title>
 </head>
 <body bgcolor="#f9f9f9">
-<div><a href="<%=path%>"><font size="+2">Trở lại</a></font> </div><br>
+<div><a href="<%=path%>"><font size="+2">Trang chủ</a></font> </div><br>
 <br><br>
 <div style="width: 60%; height: 5%; text-align: center;">         
 <font size="5">Thông tin sản phẩm đấu giá: </font><font size="6" color="red" id="time"></font>
 </div><br><br>
 <div style="margin:0 auto; width: 60%;height: 55%; background-color: rgb(255,255,255);">
 <div style="float: left; width:25%; height:100%; margin: 50 60;">
-<style type="text/css">
-div img{
+			<style type="text/css">
+			div img{
 				cursor: pointer;
 				transition: all 0.1s;
 			}
@@ -74,7 +74,7 @@ function auction() {
 // 	var max_price = parseFloat(document.getElementById("price").value);
 	var max_price1 = document.getElementById("price").value;
 	if (max_price1=="") {
-		alert("竞拍价格不能为空!");
+		alert("Giá thầu không được để trống!");
 	    return false;
 	}
 	var max_price=parseFloat(document.getElementById("price").value);

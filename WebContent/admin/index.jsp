@@ -30,19 +30,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div class="content-1">
 	        <a href="<%=path %>/IndexServlet">
 	        <div class="content-1-1 content-raduis">
-	            <font class="content-text">Trở lại</font>
+	            <font class="content-text">Trang Chủ</font>
 	        </div>
 	        </a>
 	    </div>
 	    <div class="content-2">
 	    <a href="<%=path %>/CommodityManageServlet?level=guanliyuan&page=4&start=0">
 	        <div class="content-2-1 content-raduis">
-	            <font class="content-text">sản phẩm</font>
+	            <font class="content-text">Sản Phẩm Đấu Giá</font>
 	        </div>
 	        </a>
 	        <a href="<%=path %>/UserManageServlet?start=0&end=6">
 	        <div class="content-2-2 content-raduis">
-	            <font class="content-text"> user</font>
+	            <font class="content-text"> Quản Lý User</font>
 	        </div>
 	        </a>
 	    </div>

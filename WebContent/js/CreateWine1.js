@@ -48,7 +48,7 @@ function toDays(ss) {
 	var mi=parseInt((ss - s) / 60 % 60);
 	var h=parseInt(((ss - s) / 60 - mi) / 60 % 24); 
 	var d=parseInt((((ss - s) / 60 - mi) / 60 - h) / 24) 
-	return "Đếm ngược(UTC+8):"+d+"Ngày"+h+"Giờ"+mi+"Phút"+s+"Giây";
+	return "Còn lại:"+ d +"Ngày"+ h +"Giờ"+ mi +"Phút"+ s +"Giây";
 }
 
 function RunS(id,TotalS) {

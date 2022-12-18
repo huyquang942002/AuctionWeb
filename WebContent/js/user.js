@@ -33,15 +33,15 @@ function error(error,isAdmin){
 		adminDiv.style.display = "";
 	}
     if(error == "error"){
-        alert("头像更换失败");
+        alert("Thay thế hình đại diện không thành công");
     }else if(error == "ok"){
-        alert("头像更换成功");
+        alert("Đã đổi avatar thành công");
     }
 }
 function yanzheng(){
     var user_icon = document.getElementById("user_icon").value;
     if(user_icon == ""){
-        alert("请选择上传的头像！");
+        alert("Vui lòng chọn một hình đại diện để tải lên！");
         return false;
     }
     return true;
@@ -50,12 +50,11 @@ function modifyUser(){
 	var msg = document.getElementById("msg");
 	var username = document.getElementById("username").value;
 	if(msg.style.display == ""){
-		//用户名已存在，不能修改
-		alert("该用户名已存在");
+		alert("Tên người dùng này đã tồn tại");
 		return false;
 	}
 	if(username == ""){
-		alert("用户名不能为空");
+		alert("Tên người dùng không được để trống");
 		return false;
 	}
 	return true;
@@ -69,9 +68,7 @@ function registerUserName(){
 		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		request.onreadystatechange=function(){
         if(request.readyState==4&&request.status==200||request.status==0){
-        	//alert("后台返回的返回值： "+request.responseText);
         	if(request.responseText == "1"){
-        		//用户已存在
         		msg.style.display = "";
         	}else{
         		msg.style.display = "none";

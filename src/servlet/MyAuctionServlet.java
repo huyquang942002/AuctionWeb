@@ -54,18 +54,14 @@ public class MyAuctionServlet extends HttpServlet {
 		request.getRequestDispatcher("myAuction.jsp").forward(request, response);
 	}
 
-//	//获取用户的物品
 	public List<Commodity> getUserGoods(int user_id){
-		//创建一个list存商品信息
 		List<Commodity> myGoodss = new ArrayList<Commodity>();
-		//查询用户拥有的book
 		BookDao newBookDao=BookDaoFactory.getBookDaoInstance();
 		try {
 			List<Book> BookList = newBookDao.getBookAll();
 			for(int i=0;i<BookList.size();i++){
 				if(BookList.get(i).getUserId() == user_id){
 					Commodity goods = BookList.get(i);
-					//获取商品id
 					Book book=BookList.get(i);
 					goods.setCommodityId(book.getId());
 					myGoodss.add(goods);
@@ -75,14 +71,12 @@ public class MyAuctionServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//查询用户拥有的watch
 		WatchDao newWatchDao=WatchDaoFactory.getWatchDaoInstance();
 		try {
 			List<Watch> thisList = newWatchDao.getWatchAll();
 			for(int i=0;i<thisList.size();i++){
 				if(thisList.get(i).getUserId() == user_id){
 					Commodity goods = thisList.get(i);
-					//获取商品id
 					Watch book=thisList.get(i);
 					goods.setCommodityId(book.getId());
 					myGoodss.add(goods);
@@ -92,14 +86,12 @@ public class MyAuctionServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// 查询用户拥有的stamp
 		StampDao newStampDao = StampDaoFactory.getDaoInstance();
 		try {
 			List<Stamp> thisList = newStampDao.getListAll();
 			for (int i = 0; i < thisList.size(); i++) {
 				if (thisList.get(i).getUserId() == user_id) {
 					Commodity goods = thisList.get(i);
-					//获取商品id
 					Stamp book=thisList.get(i);
 					goods.setCommodityId(book.getId());
 					myGoodss.add(goods);
@@ -109,14 +101,12 @@ public class MyAuctionServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// 查询用户拥有的wine
 		WineDao newWineDao = WineDaoFactory.getDaoInstance();
 		try {
 			List<Wine> thisList = newWineDao.getListAll();
 			for (int i = 0; i < thisList.size(); i++) {
 				if (thisList.get(i).getUserId() == user_id) {
 					Commodity goods = thisList.get(i);
-					// 获取商品id
 					Wine book = thisList.get(i);
 					goods.setCommodityId(book.getId());
 					myGoodss.add(goods);

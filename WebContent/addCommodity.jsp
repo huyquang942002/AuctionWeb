@@ -22,14 +22,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="top-title">
         <div class="top-title-left">
             <a href="<%=path%>/user.jsp">
-            <font size="5" color="#5de" class="top-title-text">Profile</font>
+            <font size="5" color="#5de" class="top-title-text">Quay Lại</font>
             </a>
         </div>
         <div class="top-title-center" style="display: none" id="adminDiv">
 <%--             <a href="<%=path %>/admin/index.jsp"><font size="5" color="#e56" class="top-title-text">管理员后台</font></a>  --%>
         </div>
         <div class="top-title-right">
-            <a href="<%=path%>"><font size="5" color="#e56" class="top-title-text">Back</font></a>
+            <a href="<%=path%>"><font size="5" color="#e56" class="top-title-text">Trang Chủ</font></a>
         </div>
     </div>
 </div>
@@ -60,9 +60,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			Loại sản phẩm
 			<select name="select">
 			      <option value="book">Sách</option>
-			      <option value="watch">Công Nghệ</option>
+			      <option value="watch">Đồng Hồ</option>
 			      <option value="stamp">Thời trang</option>
-			      <option value="wine">Gia dụng</option>
+			      <option value="wine">Rượu</option>
 			</select><br/>
                       Chọn hình ảnh：<input type="file" name="uploadFile" id="File" /> <br/><br/>
             <input type="submit" value="Xác nhận đấu giá" onclick=" return SumbitJudge()"/>

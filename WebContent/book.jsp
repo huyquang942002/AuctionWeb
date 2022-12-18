@@ -82,6 +82,6 @@ function SumbitJudge() {
 		</div>
 	</div>
 	
-	<script type="text/javascript" src="js/CreateBook.js" ></script>
+	<script type="text/javascript" src="js/CreateBook1.js" ></script>
 </body>
 </html>

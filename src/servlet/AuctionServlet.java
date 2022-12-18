@@ -52,32 +52,23 @@ public class AuctionServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-//		重定向
 //		response.sendRedirect("IndexServlet");
 //		doPost(request, response);
 		System.out.println("AuctionServletDoPost");
-		//获取商品id
+		//èŽ·å�–å•†å“�id
 		int id=Integer.valueOf(request.getParameter("id"));
-		//获取商品类型
 		String type=request.getParameter("type");
 //		System.out.println(id);
 		System.out.println("auctionServletType:"+type);
 		
 //		System.out.println(time);
-		//重定向
 //		response.sendRedirect("auction.jsp");
-		//判断是哪个表
 		if (type.equals("book")) {
-			//执行t_book表的操作
 			try {
 				
-				//根据id返回book信息
 				Book thisEntity = getBook(request, response, id);
-				//获得时间差
 				Long time = getBookTime(id);
-				//获得物品所有者
 				User user=getUser(request, response,thisEntity.getUserId());
-				//获得最大价格
 				float maxPrice=thisEntity.getMaxPrice();
 				System.out.println("maxPrice:"+maxPrice);
 				float price=thisEntity.getPrice();
@@ -100,13 +91,9 @@ public class AuctionServlet extends HttpServlet {
 		//wacth
 		else if (type.equals("watch")) {
 			try {
-				//根据id返回信息
 				Watch thisEntity = getWatch(request, response, id);
-				//获得时间差
 				Long time = getWatchTime(id);
-				//获得物品所有者
 				User user=getUser(request, response,thisEntity.getUserId());
-				//获得最大价格
 				float maxPrice=thisEntity.getMaxPrice();
 				System.out.println("maxPrice:"+maxPrice);
 				float price=thisEntity.getPrice();
@@ -128,13 +115,9 @@ public class AuctionServlet extends HttpServlet {
 		//stamp
 		else if (type.equals("stamp")) {
 			try {
-				//根据id返回信息
 				Stamp thisEntity = getStamp(request, response, id);
-				//获得时间差
 				Long time = getStampTime(id);
-				//获得物品所有者
 				User user=getUser(request, response,thisEntity.getUserId());
-				//获得最大价格
 				float maxPrice=thisEntity.getMaxPrice();
 				System.out.println("maxPrice:"+maxPrice);
 				float price=thisEntity.getPrice();
@@ -156,13 +139,9 @@ public class AuctionServlet extends HttpServlet {
 		// wine
 		else if (type.equals("wine")) {
 			try {
-				// 根据id返回信息
 				Wine thisEntity = getWine(request, response, id);
-				// 获得时间差
 				Long time = getWineTime(id);
-				// 获得物品所有者
 				User user = getUser(request, response, thisEntity.getUserId());
-				// 获得最大价格
 				float maxPrice = thisEntity.getMaxPrice();
 				System.out.println("maxPrice:" + maxPrice);
 				float price = thisEntity.getPrice();
@@ -201,12 +180,12 @@ public class AuctionServlet extends HttpServlet {
 		WatchDao thisDao=WatchDaoFactory.getWatchDaoInstance();
 		thisEntity = thisDao.getById(id);
 		if(thisEntity==null) {
-			System.out.println("获取物品失败");
+			System.out.println("èŽ·å�–ç‰©å“�å¤±è´¥");
 		}
 		return thisEntity;
 	}
 
-	//根据id获取book信息
+	//æ ¹æ�®idèŽ·å�–bookä¿¡æ�¯
 	public Book getBook(HttpServletRequest request, HttpServletResponse response,int id){
 		Book thisEntity = null;
 		BookDao thisDao=BookDaoFactory.getBookDaoInstance();
@@ -217,11 +196,11 @@ public class AuctionServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		if(thisEntity==null) {
-			System.out.println("获取物品失败");
+			System.out.println("èŽ·å�–ç‰©å“�å¤±è´¥");
 		}
 		return thisEntity;
 	}
-	//获取物品所有者
+	//èŽ·å�–ç‰©å“�æ‰€æœ‰è€…
 	public User getUser(HttpServletRequest request, HttpServletResponse response,int user_id){
 		User user = null;
 		UserDao userdao = UserDaoFactory.getDaoInstance();
@@ -247,25 +226,25 @@ public class AuctionServlet extends HttpServlet {
 //		doGet(request, response);
 //		PrintWriter out = response.getWriter();
 
-		// 修改当前竞拍物品的最高价与出最高价的用户id
-		int user_id = Integer.valueOf(request.getParameter("user_id"));// 当前物品的id
-		int winner_id = Integer.valueOf(request.getParameter("winner_id"));// 最高价用户id，也就是当前登录的参与竞拍的用户
+		// ä¿®æ”¹å½“å‰�ç«žæ‹�ç‰©å“�çš„æœ€é«˜ä»·ä¸Žå‡ºæœ€é«˜ä»·çš„ç”¨æˆ·id
+		int user_id = Integer.valueOf(request.getParameter("user_id"));// å½“å‰�ç‰©å“�çš„id
+		int winner_id = Integer.valueOf(request.getParameter("winner_id"));// æœ€é«˜ä»·ç”¨æˆ·idï¼Œä¹Ÿå°±æ˜¯å½“å‰�ç™»å½•çš„å�‚ä¸Žç«žæ‹�çš„ç”¨æˆ·
 		String type = String.valueOf(request.getParameter("type"));
 		int goods_id = Integer.valueOf(request.getParameter("goods_id"));
 		int max_price = Integer.valueOf(request.getParameter("max_price"));
 		
-		//获取物品拥有者
+		//èŽ·å�–ç‰©å“�æ‹¥æœ‰è€…
 		User user = getUser(request, response,user_id);
 //		if (winner_id!=user.getId()) {
 //			//+1
 //			UserDao thisUserDao=UserDaoFactory.getDaoInstance();
 //			thisUserDao.addUserBoughtNumber(user_id);
 //		}
-		// 修改
+		// ä¿®æ”¹
 		updateMax_price(type,goods_id, max_price, winner_id);
 		if (type.equals("book")) {
-			//执行book的操作
-			// 返回详情页面
+			//æ‰§è¡Œbookçš„æ“�ä½œ
+			// è¿”å›žè¯¦æƒ…é¡µé�¢
 			Book thisEntity = getBook(request, response, goods_id);
 			float maxPrice=thisEntity.getMaxPrice();
 //			System.out.println("maxPrice:"+maxPrice);
@@ -276,7 +255,7 @@ public class AuctionServlet extends HttpServlet {
 				request.setAttribute("user", user);
 				request.setAttribute("type", type);
 				request.setAttribute("time", time);
-				//获取原数据
+				//èŽ·å�–åŽŸæ•°æ�®
 				request.setAttribute("price", price);
 				request.setAttribute("maxPrice", maxPrice);
 				request.getRequestDispatcher("auction.jsp").forward(request, response);
@@ -284,8 +263,8 @@ public class AuctionServlet extends HttpServlet {
 		}
 		//watch
 		if (type.equals("watch")) {
-			//执行watch的操作
-			// 返回详情页面
+			//æ‰§è¡Œwatchçš„æ“�ä½œ
+			// è¿”å›žè¯¦æƒ…é¡µé�¢
 			Watch thisEntity = getWatch(request, response, goods_id);
 			float maxPrice=thisEntity.getMaxPrice();
 //			System.out.println("maxPrice:"+maxPrice);
@@ -296,7 +275,7 @@ public class AuctionServlet extends HttpServlet {
 				request.setAttribute("user", user);
 				request.setAttribute("type", type);
 				request.setAttribute("time", time);
-				//获取原数据
+				//èŽ·å�–åŽŸæ•°æ�®
 				request.setAttribute("price", price);
 				request.setAttribute("maxPrice", maxPrice);
 				request.getRequestDispatcher("auction.jsp").forward(request, response);
@@ -304,8 +283,8 @@ public class AuctionServlet extends HttpServlet {
 		}
 		// stamp
 		if (type.equals("stamp")) {
-			// 执行watch的操作
-			// 返回详情页面
+			// æ‰§è¡Œwatchçš„æ“�ä½œ
+			// è¿”å›žè¯¦æƒ…é¡µé�¢
 			Stamp thisEntity = getStamp(request, response, goods_id);
 			float maxPrice = thisEntity.getMaxPrice();
 //					System.out.println("maxPrice:"+maxPrice);
@@ -316,7 +295,7 @@ public class AuctionServlet extends HttpServlet {
 				request.setAttribute("user", user);
 				request.setAttribute("type", type);
 				request.setAttribute("time", time);
-				// 获取原数据
+				// èŽ·å�–åŽŸæ•°æ�®
 				request.setAttribute("price", price);
 				request.setAttribute("maxPrice", maxPrice);
 				request.getRequestDispatcher("auction.jsp").forward(request, response);
@@ -324,8 +303,8 @@ public class AuctionServlet extends HttpServlet {
 		}
 		//wine
 		if (type.equals("wine")) {
-			// 执行watch的操作
-			// 返回详情页面
+			// æ‰§è¡Œwatchçš„æ“�ä½œ
+			// è¿”å›žè¯¦æƒ…é¡µé�¢
 			Wine thisEntity = getWine(request, response, goods_id);
 			float maxPrice = thisEntity.getMaxPrice();
 //					System.out.println("maxPrice:"+maxPrice);
@@ -336,7 +315,7 @@ public class AuctionServlet extends HttpServlet {
 				request.setAttribute("user", user);
 				request.setAttribute("type", type);
 				request.setAttribute("time", time);
-				// 获取原数据
+				// èŽ·å�–åŽŸæ•°æ�®
 				request.setAttribute("price", price);
 				request.setAttribute("maxPrice", maxPrice);
 				request.getRequestDispatcher("auction.jsp").forward(request, response);
@@ -344,7 +323,7 @@ public class AuctionServlet extends HttpServlet {
 		}
 	}
 
-//修改拍卖品当前最高价与最高价用户id的业务
+//ä¿®æ”¹æ‹�å�–å“�å½“å‰�æœ€é«˜ä»·ä¸Žæœ€é«˜ä»·ç”¨æˆ·idçš„ä¸šåŠ¡
 	public void updateMax_price(String type,int goods_id, int max_price, int winner_id) {
 		if (type.equals("book")) {
 			BookDao goodsdao = BookDaoFactory.getBookDaoInstance();
@@ -365,7 +344,7 @@ public class AuctionServlet extends HttpServlet {
 	}
 //
 	
-    //获取现在时间与结束时间的时间差
+    //èŽ·å�–çŽ°åœ¨æ—¶é—´ä¸Žç»“æ�Ÿæ—¶é—´çš„æ—¶é—´å·®
 	private long getBookTime(int id){
 		Long time = null;
 		BookDao bookDao=BookDaoFactory.getBookDaoInstance();
@@ -398,7 +377,7 @@ public class AuctionServlet extends HttpServlet {
 		StampDao thisDao=StampDaoFactory.getDaoInstance();
 		thisEntity = thisDao.getById(id);
 		if(thisEntity==null) {
-			System.out.println("获取物品失败");
+			System.out.println("èŽ·å�–ç‰©å“�å¤±è´¥");
 		}
 		return thisEntity;
 	}
@@ -424,7 +403,7 @@ public class AuctionServlet extends HttpServlet {
 		WineDao thisDao = WineDaoFactory.getDaoInstance();
 		thisEntity = thisDao.getById(id);
 		if (thisEntity == null) {
-			System.out.println("获取物品失败");
+			System.out.println("èŽ·å�–ç‰©å“�å¤±è´¥");
 		}
 		return thisEntity;
 	}

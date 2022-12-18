@@ -15,7 +15,7 @@ function GetJsonData(id,name,type,price,introduce,picture,date,state){
 }
 function GetJson(List) {
 	
-	$.getJSON("CommodityServlet?type=book", function(result) {
+	$.getJSON("CommodityServlet?type=stamp", function(result) {
 		
 		var json = eval(result);
 		for (var i = 0; i < json.length; i++) {
@@ -44,11 +44,11 @@ function timeStampDate(time){
 }
 
 function toDays(ss) {
-	var s=parseInt(ss % 60); // 秒
-	var mi=parseInt((ss - s) / 60 % 60); // 分钟
-	var h=parseInt(((ss - s) / 60 - mi) / 60 % 24); // 小时
-	var d=parseInt((((ss - s) / 60 - mi) / 60 - h) / 24) // 天
-	return "倒计时(UTC+8):"+d+"天"+h+"小时"+mi+"分钟"+s+"秒";
+	var s=parseInt(ss % 60); 
+	var mi=parseInt((ss - s) / 60 % 60);
+	var h=parseInt(((ss - s) / 60 - mi) / 60 % 24); 
+	var d=parseInt((((ss - s) / 60 - mi) / 60 - h) / 24) 
+	return "Còn lại:"+d+"Ngày"+h+"Giờ"+mi+"Phút"+s+"Giây";
 }
 
 function RunS(id,TotalS) {
@@ -60,6 +60,7 @@ function RunS(id,TotalS) {
 }
 
 var AddWatchBox2 = document.getElementById("watchBox2");
+
 AddWatchDiv();
 function AddWatchDiv() {
 	var commodityId=1;
@@ -69,7 +70,8 @@ function AddWatchDiv() {
 		}
 		var newA=document.createElement("a");
 		commodityId=i+1;
-		newA.href="AuctionServlet?type=book&id="+this.id;
+		newA.href="AuctionServlet?type=stamp&id="+this.id;
+
 		var newDiv=document.createElement("div");
 		var newImg=document.createElement("img");
 		newImg.src=this.picture;

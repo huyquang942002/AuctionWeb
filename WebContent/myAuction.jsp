@@ -7,7 +7,6 @@ import="java.text.SimpleDateFormat"
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-//获取物品列表
 List<Commodity> myGoodss = null;
 myGoodss = (List<Commodity>)request.getAttribute("myGoodss");
 User user = (User)session.getAttribute("user");

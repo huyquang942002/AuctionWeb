@@ -3,7 +3,7 @@ package entity;
 import java.sql.Timestamp;
 
 public class Commodity {
-	private int id;//intç±»å�‹
+	private int id;
 	private String type;
 	private float price;
 	private String introduce;

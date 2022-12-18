@@ -96,6 +96,6 @@ function SumbitJudge() {
 		</div>
 	</div>
 	
-	<script type="text/javascript" src="js/CreateStamp.js" ></script>
+	<script type="text/javascript" src="js/CreateStamp1.js" ></script>
 </body>
 </html>
