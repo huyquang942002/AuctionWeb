@@ -38,12 +38,12 @@ List<Book> goodss = (List<Book>)request.getAttribute("goodss");
 			<%
 				if (session.getAttribute("user") == null) {
 			%>  
-			<a href="<%=path%>/login.jsp"><font color="#A6686A">Đăng nhập</font></a>
+			<a href="<%=path%>/login.jsp"><font color="#fff">Đăng nhập</font></a>
 			<%
 				} else {
 			%>  
-			        <a href="<%=path %>/UserServlet?user_id=<%=((User)session.getAttribute("user")).getId() %>"><font color="#A6686A">User,${user.name} </font></a> 
-					<a href="<%=path%>/IndexServlet?login=no"><font color="#A6686A"><font color="#D6686A">Đăng xuất</font> </font></a>
+			        <a href="<%=path %>/UserServlet?user_id=<%=((User)session.getAttribute("user")).getId() %>"><font color="#fff">Profile - ${user.name} </font></a> 
+					<a href="<%=path%>/IndexServlet?login=no"><font color="#fff"><font color="#fff">Đăng xuất</font> </font></a>
 			<%
 				}
 			%>
