@@ -1,20 +1,20 @@
 
 var button1 = document.getElementById("button1");
-button1.style.color = "red";
+button1.style.color = "#008000";
 function display(button){
     var content1 = document.getElementById("content1");
     var content2 = document.getElementById("content2");
     var button1 = document.getElementById("button1");
     var button2 = document.getElementById("button2");
     if(button == 1){
-        button1.style.color = "red";
-        button2.style.color = "#abb";
+        button1.style.color = "#008000";
+        button2.style.color = "#000";
         content1.style.display = "";
         content2.style.display = "none";
     }
     if(button == 2){
-        button2.style.color = "red";
-        button1.style.color = "#abb";
+        button2.style.color = "#008000";
+        button1.style.color = "#000";
         content1.style.display = "none";
         content2.style.display = "";
     }

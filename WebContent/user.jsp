@@ -21,15 +21,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="top-parent">
     <div class="top-title">
         <div class="top-title-left">
-            <a href="<%=path%>/user.jsp">
-               <font size="5" color="#5de" class="top-title-text">Trung tâm cá nhân</font>
+            <a href="<%=path%>/user.jsp" style="text-decoration: none;">
+               <font size="5" color="#fff" class="top-title-text">Trung tâm cá nhân</font>
             </a>
         </div>
         <div class="top-title-center" style="display: none" id="adminDiv">
-             <a href="<%=path %>/admin/index.jsp"><font size="5" color="#e56" class="top-title-text">Trang Admin</font></a> 
+             <a href="<%=path %>/admin/index.jsp" style="text-decoration: none;"><font size="5" color="#fff" class="top-title-text">Trang Admin</font></a> 
         </div>
         <div class="top-title-right">
-            <a href="<%=path%>"><font size="5" color="#e56" class="top-title-text">Trang Chủ</font></a>
+            <a href="<%=path%>" style="text-decoration: none;"><font size="5" color="#fff" class="top-title-text">Trang Chủ</font></a>
         </div>
     </div>
 </div>
@@ -44,37 +44,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
                 <div class="content-top-left-right">
                     <div class="content-top-left-right-name">
-                        <font size="5" color="#554">User:${user.name }</font>
+                        <font size="5" color="#000">User:</font>
+                        <font size="5" color = "#008000">${user.name }</font>
                         <img src="img/modifyUserName.jpg" width="15px" height="15px" onclick="diplayModifyName()">
                     </div>
                     <div class="content-top-left-right-id">
-                        <font size="4" color="#554">PID:</font>
-                        <font size="4" color="#e33">${user.id }</font>
+                        <font size="4" color="#000">PID:</font>
+                        <font size="4" color="#008000">${user.id }</font>
                     </div>
                 </div>
             </div>
         </div>
         <div class="content-center">
-            <div style="width: 100%;height: 40px;">
-                <button class="button" id="button1" color="red" onclick="display(1)">Về Tôi:</button>
+            <div style="width: 100%;height: 40px; margin-top: 10px;">
+                <button class="button" id="button1" onclick="display(1)">My Profile</button>
                 <button class="button" id="button2" onclick="display(2)">My Auction</button>
             </div>
             <div class="content-content1" id="content1" style="display: '';">
             <div>
-                    <font size="3" color="#334" style="">Tên Tài Khoản:</font>
-                    <font size="3" color="red" style="margin-left: 0px;">${user.name }</font>
+                    <font size="3" color="#000" style="">Tên Tài Khoản:</font>
+                    <font size="3" color="008000" style="margin-left: 0px;">${user.name }</font>
                 </div>
                 <div>
-                    <font size="3" color="#334" style="">Số Điện Thoại:</font>
-                    <font size="3" color="red" style="margin-left: 0px;">${user.phone }</font>
+                    <font size="3" color="#000" style="">Số Điện Thoại:</font>
+                    <font size="3" color="008000" style="margin-left: 0px;">${user.phone }</font>
                 </div>
                 <div>
-                    <font size="3" color="#334" style="">Địa chỉ:</font>
-                    <font size="3" color="red" style="margin-left: 16px;">${user.address}</font>
+                    <font size="3" color="#000" style="">Địa chỉ:</font>
+                    <font size="3" color="008000" style="margin-left: 16px;">${user.address}</font>
                 </div>
                 <div>
-                    <a href="<%=path %>/alterUser.jsp?user_id=${user.id }"><font size="4" color=rgb(192,2,103) style="">Đổi Mật Khẩu</font></a>
-                    <a href="<%=path %>/addCommodity.jsp?user_id=${user.id }" style="margin-left: 20px;"><font size="4" color=rgb(192,2,103) style="">Thêm Đấu Giá</font></a>
+                    <a href="<%=path %>/alterUser.jsp?user_id=${user.id }" style="text-decoration: none;"><font size="4" style="border: 1px solid #000; border-radius: 3px; padding: 5px; color: #000;">Đổi Mật Khẩu</font></a>
+                    <a href="<%=path %>/addCommodity.jsp?user_id=${user.id }" style="margin-left: 20px; text-decoration: none;"><font size="4" style="border: 1px solid #000; border-radius: 3px; padding: 5px; color: #000;">Thêm Đấu Giá</font></a>
                 </div>
             </div>
             <div class="content-content2" id="content2" style="display: none;">
