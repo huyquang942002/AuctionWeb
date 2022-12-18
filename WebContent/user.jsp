@@ -124,7 +124,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="userDiv" class="shadow" style="display: none;">
         <div style="float:left;width:100%;height:10%;">
             <div style="float:left;width:90%;height:100%;text-align:center;">
-                <font size="3" color="#4d2">Sửa đổi tên người dùng</font>
+                <font size="3" color="#000">Sửa đổi tên người dùng</font>
             </div>
             <div style="float:right;width:10%;height:100%;text-align: center;" onclick="closeUser()">
                 <font size="6" style="">×</font>
@@ -133,11 +133,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         
         <div class="name-content">
         	<form action="<%=path %>/AlterUserServlet" method="post" onsubmit="return modifyUser()">
-        	<input type="text" class="form-control" placeholder="新用户名" onchange="registerUserName()" name="username" id="username">
+        	<input type="text" class="form-control" placeholder="Tên đăng nhập" onchange="registerUserName()" name="username" id="username">
         	<input type="hidden" name="user_id" value="${user.id }">
         	<input type="hidden" name="modify" value="username">
         	<div id="msg" style="display:none;"><font color="red" size="1">tên đăng kí đã được sử dụng</font></div>
-	        <input type="submit" class="btn btn-info" style="width: 40%;margin-top: 100px;" value="submit">
+	        <input type="submit" class="btn btn-info" style="width: 40%;margin-top: 100px; background-color:#008000;" value="submit">
 	        </form>
         </div>
     
