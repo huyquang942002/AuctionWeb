@@ -49,7 +49,7 @@ List<User> users = (List<User>)request.getAttribute("users");
 	    <div class="serchBox">
 		<form action="SerchServlet" name="search" class="search" method="post" ><br>
 			<input type="text" id="serchInput" name="serchInput" placeholder="tìm kiếm"/>
-			<input type="submit" id="serchBtn" value="Search" onclick=" return SumbitJudge()"/>
+			<input type="submit" id="serchBtn" value="tìm kiếm" onclick=" return SumbitJudge()"/>
 		</form>
 		</div>
 	</div>

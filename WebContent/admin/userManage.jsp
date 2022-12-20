@@ -23,7 +23,7 @@ users = (List<User>) request.getAttribute("users");
 	<div class="top-parent">
 		<div class="top-title">
 			<div class="top-title-left">
-				<a href="<%=path %>/admin/index.jsp" style="text-decoration: none;"> <font size="6" color="#191970" class="top-title-text">Quản lí</font>
+				<a href="<%=path %>/admin/index.jsp" style="text-decoration: none;"> <font size="6" color="#191970" class="top-title-text">Trở lại</font>
 				</a>
 			</div>
 		</div>
@@ -136,7 +136,6 @@ users = (List<User>) request.getAttribute("users");
                         	  thisPage=1;
                           }
                           %>
-                          <p><%=thisMaxPage%>Trang</p>
                           <p>Trang<%=thisPage%></p>
                           </div>
                         </li>

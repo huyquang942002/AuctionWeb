@@ -25,9 +25,9 @@ List<Book> goodss = (List<Book>)request.getAttribute("goodss");
 <head>
 <meta charset="UTF-8">
 <title>Auction Web</title>
-<link rel="stylesheet" type="text/css" href="css/HomePage.css" >
-<link rel="stylesheet"  href="css/SerchBox.css" />
-<link rel="stylesheet"  href="css/Carousel.css" />
+<link rel="stylesheet" href="css/HomePage.css" type="text/css">
+<link rel="stylesheet" href="css/SerchBox.css" />
+<link rel="stylesheet" href="css/Carousel.css" />
 
 <script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
 <script type="text/javascript" src="js/index.js" ></script>
@@ -55,7 +55,7 @@ List<Book> goodss = (List<Book>)request.getAttribute("goodss");
 	    <div class="serchBox">
 		<form action="SerchServlet" name="search" class="search" method="post" ><br>
 			<input type="text" id="serchInput" name="serchInput" placeholder="Search"/>
-			<input type="submit" id="serchBtn" value="Search" onclick=" return SumbitJudge()"/>
+			<input type="submit" id="serchBtn" value="tìm kiếm" onclick=" return SumbitJudge()"/>
 		</form>
 		</div>
 	</div>

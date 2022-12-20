@@ -7,7 +7,7 @@ public class DbConnection {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/ecom";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "trung2002";
+    private static final String PASSWORD = "matkhau123";
     public Connection connection = null;
     
     public DbConnection() {
@@ -15,7 +15,7 @@ public class DbConnection {
 			Class.forName(DRIVER).newInstance(); 
 			connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 		} catch (Exception e) {
-			System.out.println(e);
+			System.out.println("bug rồi ba");
 		}
 	}
 

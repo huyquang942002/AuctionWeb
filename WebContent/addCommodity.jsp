@@ -26,7 +26,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </a>
         </div>
         <div class="top-title-center" style="display: none" id="adminDiv">
-<%--             <a href="<%=path %>/admin/index.jsp"><font size="5" color="#e56" class="top-title-text">管理员后台</font></a>  --%>
         </div>
         <div class="top-title-right">
             <a href="<%=path%>"><font size="5" color="#e56" class="top-title-text">Trang Chủ</font></a>
@@ -54,17 +53,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
         <div class="content-center">
-            <form action="AddCommodityServlet?userId=${user.id }" method="post" enctype="multipart/form-data">
-                     Giá khởi điểm：<input name="price" id="inputPrice" onkeyup="value=value.replace(/[^(\d)]/g,'');if(value.length>7)value=value.slice(0,7)"/><br/>
-			Giới thiệu：<input name="introduce" id="inputIntroduce" style="width:330px;" onkeyup="if(value.length>40)value=value.slice(0,40)" /><br/>
+            <form action="AddCommodityServlet?userId=${user.id }" method="post" enctype="multipart/form-data" style="margin-top: 20px;">
+            Giá khởi điểm：<input name="price" id="inputPrice" onkeyup="value=value.replace(/[^(\d)]/g,'');if(value.length>7)value=value.slice(0,7)"/><br/>
+			Giới thiệu：<input name="introduce" id="inputIntroduce" style="width:330px;    width: 330px;margin-left: 26px;margin-top: 10px;" onkeyup="if(value.length>40)value=value.slice(0,40)" /><br/>
 			Loại sản phẩm
-			<select name="select">
+			<select name="select" style="margin-left: 5px;margin-top: 10px;">
 			      <option value="book">Sách</option>
 			      <option value="watch">Đồng Hồ</option>
 			      <option value="stamp">Thời trang</option>
 			      <option value="wine">Rượu</option>
 			</select><br/>
-                      Chọn hình ảnh：<input type="file" name="uploadFile" id="File" /> <br/><br/>
+                      Chọn hình ảnh：<input type="file" name="uploadFile" id="File" style="width: 75px;"/> <br/><br/>
             <input type="submit" value="Xác nhận đấu giá" onclick=" return SumbitJudge()"/>
             </form>
         </div>

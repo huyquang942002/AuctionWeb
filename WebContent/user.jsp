@@ -44,7 +44,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
                 <div class="content-top-left-right">
                     <div class="content-top-left-right-name">
-                        <font size="5" color="#554">User:${user.name }</font>
+                        <font size="5" color="#554">User: ${user.name }</font>
                         <img src="img/modifyUserName.jpg" width="15px" height="15px" onclick="diplayModifyName()">
                     </div>
                     <div class="content-top-left-right-id">
@@ -55,22 +55,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
         <div class="content-center">
-            <div style="width: 100%;height: 40px;">
-                <button class="button" id="button1" color="red" onclick="display(1)">Về Tôi:</button>
+            <div style="width: 100%;height: 40px; display: flex; justify-content: space-around;">
+                <button class="button" id="button1" color="red" onclick="display(1)">User </button>
                 <button class="button" id="button2" onclick="display(2)">My Auction</button>
             </div>
             <div class="content-content1" id="content1" style="display: '';">
             <div>
-                    <font size="3" color="#334" style="">Tên Tài Khoản:</font>
-                    <font size="3" color="red" style="margin-left: 0px;">${user.name }</font>
+                    <font size="3" color="#334" style="">Tên tài khoản:</font>
+                    <font size="4" color="red" style="margin-left: 0px;">${user.name }</font>
                 </div>
                 <div>
-                    <font size="3" color="#334" style="">Số Điện Thoại:</font>
+                    <font size="3" color="#334" style="">Số điện thoại:</font>
                     <font size="3" color="red" style="margin-left: 0px;">${user.phone }</font>
                 </div>
                 <div>
                     <font size="3" color="#334" style="">Địa chỉ:</font>
-                    <font size="3" color="red" style="margin-left: 16px;">${user.address}</font>
+                    <font size="3" color="red" style="margin-left:s 16px;">${user.address}</font>
                 </div>
                 <div>
                     <a href="<%=path %>/alterUser.jsp?user_id=${user.id }"><font size="4" color=rgb(192,2,103) style="">Đổi Mật Khẩu</font></a>
