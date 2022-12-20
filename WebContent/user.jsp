@@ -80,12 +80,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="content-content2" id="content2" style="display: none;">
                 <div>
                     <font size="3" color="#334" style="">Danh Sách Sản Phẩm Đang Đấu Giá</font>
-                    <font size="3" color="#5e1" style="margin-left: 20px;">${user.auction_number }</font>
+                    <font size="3" color="#5e1" style="margin-left: 20px;"></font>
                     <a href="<%=path%>/MyAuctionServlet?user_id=${user.id }"><font size="3" color="blue" style="margin-left: 30px;">chi tiết</font></a>
                 </div>
                 <div>
                     <font size="3" color="#334" style="">Số lượng mua</font>
-                    <font size="3" color="#5e1" style="margin-left: 20px;">${user.bought_number }</font>
+                    <font size="3" color="#5e1" style="margin-left: 20px;"></font>
                     <a href="<%=path%>/MyBoughtServlet?user_id=${user.id }"><font size="3" color="blue" style="margin-left: 30px;">chi tiết</font></a>
                 </div>
             </div>

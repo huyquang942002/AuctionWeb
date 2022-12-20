@@ -45,7 +45,6 @@ public class AlterUserServlet extends HttpServlet {
 //		doGet(request, response);
 		System.out.println("toPost");
 		request.setCharacterEncoding("UTF-8");
-		//判断是修改密码还是修改用户名
 		String modify = request.getParameter("modify");
 		System.out.println(modify);
 		if(modify.equals("password")){
@@ -56,31 +55,27 @@ public class AlterUserServlet extends HttpServlet {
 //		}
 	}
 //	
-	//修改密码业务
-		public void modifyPassword(HttpServletRequest request, HttpServletResponse response,int user_id,String password) throws IOException{
+			public void modifyPassword(HttpServletRequest request, HttpServletResponse response,int user_id,String password) throws IOException{
 			UserDao userdao = UserDaoFactory.getDaoInstance();
 			if(passwordIsOk(user_id, request.getParameter("yuanpassword")) && userdao.AlterUserPassword(user_id, password)){
 				if (request.getParameter("yuanpassword").equals(password)) {
-					System.out.println("修改失败，新密码和原密码相同");
+					System.out.println("");
 					response.sendRedirect("alterUser.jsp?user_id="+request.getParameter("user_id")+"&error=newPassWord=oldPassWord");
 				}
 				else if(!request.getParameter("yuanpassword").equals(password)){
-				System.out.println("修改成功");
+				System.out.println("");
 				response.sendRedirect("UserServlet?user_id="+request.getParameter("user_id"));
 				}
 				else{
-					//修改失败
-					System.out.println("修改失败,系统错误");
+					System.out.println("");
 					response.sendRedirect("alterUser.jsp?user_id="+request.getParameter("user_id")+"&error=systemError");
 				}
 			}
 			else{
-				//修改失败
-				System.out.println("修改失败");
+				System.out.println("");
 				response.sendRedirect("alterUser.jsp?user_id="+request.getParameter("user_id")+"&error=oloPasswordError");
 			}
 		}
-		//查询原密码是否正确
 		public boolean passwordIsOk(int user_id,String password){
 			UserDao userdao =UserDaoFactory.getDaoInstance();
 			User user = userdao.querUser(user_id);
@@ -89,22 +84,5 @@ public class AlterUserServlet extends HttpServlet {
 			}
 			return false;
 		}
-//		//修改用户名
-//		public void modifyUsername(HttpServletRequest request, HttpServletResponse response,int user_id,String username) throws IOException{
-//			UserDao userdao = UserDaoFactory.getDaoInstance();
-//			
-//			if(userdao.AlterUsername(user_id, username)){
-//				//修改成功
-//				System.out.println("修改成功");
-//				//重新把用户信息存入session
-//				HttpSession session = request.getSession();
-//				User user = userdao.querUser(user_id);
-//				session.setAttribute("user",user);
-//				response.sendRedirect("UserServlet?user_id="+request.getParameter("user_id"));
-//			}else{
-//				//修改失败
-//				System.out.println("修改失败");
-//				response.sendRedirect("UserServlet?user_id="+request.getParameter("user_id")+"&error=error");
-//			}
-//		}
+
 }

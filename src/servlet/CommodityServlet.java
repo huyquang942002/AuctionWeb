@@ -58,18 +58,14 @@ public class CommodityServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 
-//		System.out.println("WatchPost");
-		// 声明out对象
 		PrintWriter out = response.getWriter();
 		
-		//获取商品类型
 		String type=request.getParameter("type");
 		
 		System.out.println(type);
-		// 通过DAO工厂获得DAO实现类实例
 		if(type.equals("book"))
 		{
-		    out.print(getBook());// 返回json对象     {"stu1":stu1, "stu2":stu2,"stu3":stu3 }
+		    out.print(getBook());
 //		System.out.println(Json);
 		}
 		else if (type.equals("watch")) {
@@ -83,7 +79,6 @@ public class CommodityServlet extends HttpServlet {
 		}	
 		out.close();
 	}
-	//获取book
 	public JSONArray getBook() {
 		BookDao thisDao = BookDaoFactory.getBookDaoInstance();
 		List<Book> listAll = null;
@@ -93,18 +88,13 @@ public class CommodityServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//实例化json
 		JSONArray Json=new JSONArray();
 		for (int i = 0; i < listAll.size(); i++) {
-			// 实例化一个Book用来获取t_book中的信息
 			Book bb = listAll.get(i);
-//         	System.out.println(bb.getPicture());
 			Json.add(i,bb);
-//			System.out.println(WatchJson.getString(i));
 		}
 		return Json;
 	}
-	//获取watch
 	public JSONArray getWatch() {
 		WatchDao thisDao = WatchDaoFactory.getWatchDaoInstance();
 		List<Watch> listAll = null;
@@ -114,10 +104,8 @@ public class CommodityServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//实例化json
 		JSONArray Json=new JSONArray();
 		for (int i = 0; i < listAll.size(); i++) {
-			// 实例化一个Book用来获取t_book中的信息
 			Watch bb = listAll.get(i);
 //         	System.out.println(bb.getPicture());
 			Json.add(i,bb);
@@ -126,8 +114,7 @@ public class CommodityServlet extends HttpServlet {
 		return Json;
 	}
 
-	// 获取stamp
-	public JSONArray getStamp() {
+		public JSONArray getStamp() {
 		StampDao thisDao = StampDaoFactory.getDaoInstance();
 		List<Stamp> listAll = null;
 		try {
@@ -136,11 +123,9 @@ public class CommodityServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// 实例化json
-		JSONArray Json = new JSONArray();
+				JSONArray Json = new JSONArray();
 		for (int i = 0; i < listAll.size(); i++) {
-			// 实例化一个Book用来获取t_book中的信息
-			Stamp bb = listAll.get(i);
+						Stamp bb = listAll.get(i);
 //	         	System.out.println(bb.getPicture());
 			Json.add(i, bb);
 //				System.out.println(WatchJson.getString(i));
@@ -148,7 +133,6 @@ public class CommodityServlet extends HttpServlet {
 		return Json;
 	}
 
-	// 获取wine
 	public JSONArray getWine() {
 		WineDao thisDao = WineDaoFactory.getDaoInstance();
 		List<Wine> listAll = null;
@@ -158,10 +142,9 @@ public class CommodityServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// 实例化json
 		JSONArray Json = new JSONArray();
 		for (int i = 0; i < listAll.size(); i++) {
-			// 实例化一个Book用来获取t_book中的信息
+		
 			Wine bb = listAll.get(i);
 //		         	System.out.println(bb.getPicture());
 			Json.add(i, bb);

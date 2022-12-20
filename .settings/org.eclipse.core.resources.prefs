@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
+encoding//src/servlet/AlterUserServlet.java=UTF-8
+encoding//src/servlet/CommodityServlet.java=UTF-8
 encoding//src/servlet/UserManageServlet.java=UTF-8

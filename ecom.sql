@@ -11,7 +11,7 @@
  Target Server Version : 80030
  File Encoding         : 65001
 
- Date: 20/12/2022 20:57:27
+ Date: 21/12/2022 00:15:51
 */
 
 SET NAMES utf8mb4;
@@ -31,19 +31,19 @@ CREATE TABLE `t_book`  (
   `introduce` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `picture` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `state` int NOT NULL DEFAULT 1 COMMENT '1：表示未卖出\\n2：已卖出',
+  `state` int NOT NULL DEFAULT 1 ,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_book
 -- ----------------------------
-INSERT INTO `t_book` VALUES (1, 1, 'book', 1, 3200.00, 2999.00, 'Leloup,Roger - Dessin original(1983)', 'img/book/book11.jpg', '2023-02-01 23:42:21', 1);
-INSERT INTO `t_book` VALUES (2, 1, 'book', 1, 0.00, 2300.00, 'Blake&Mortimer T4(2017)', 'img/book/book12.jpg', '2023-02-01 23:42:21', 1);
-INSERT INTO `t_book` VALUES (3, 1, 'book', 1, 0.00, 5423.00, 'Barbe Rouge T2 - Le Roi des septs mers(1962)', 'img/book/book13.jpg', '2023-02-01 23:42:21', 1);
-INSERT INTO `t_book` VALUES (4, 1, 'book', 1, 3702.00, 3700.00, 'Asterix T2 - La Serpe(1962)', 'img/book/book14.jpg', '2023-02-01 23:42:21', 1);
-INSERT INTO `t_book` VALUES (5, 1, 'book', 1, 0.00, 587.00, 'Evelyn Paul, D.G. Rossetti - Stories from Dante - 1910', 'img/book/book15.jpg', '2023-02-01 23:42:21', 1);
-INSERT INTO `t_book` VALUES (6, 1, 'book', 1, 0.00, 373.00, 'Tintin T23 - Tintin et les Picaros - Tirage Cocktail', 'img/book/book16.jpg', '2023-02-01 23:42:21', 1);
+INSERT INTO `t_book` VALUES (1, 1, 'book', 1, 3200.00, 2999.00, 'Leloup,Roger - Dessin original(1983)', 'img/book/book11.jpg', '2022-12-20 23:42:21', 1);
+INSERT INTO `t_book` VALUES (2, 1, 'book', 3, 240000.00, 2300.00, 'Blake&Mortimer T4(2017)', 'img/book/book12.jpg', '2022-12-20 23:42:21', 1);
+INSERT INTO `t_book` VALUES (3, 1, 'book', 1, 0.00, 5423.00, 'Barbe Rouge T2 - Le Roi des septs mers(1962)', 'img/book/book13.jpg', '2022-12-20 23:42:21', 1);
+INSERT INTO `t_book` VALUES (4, 1, 'book', 1, 3702.00, 3700.00, 'Asterix T2 - La Serpe(1962)', 'img/book/book14.jpg', '2022-12-20 23:42:21', 1);
+INSERT INTO `t_book` VALUES (5, 1, 'book', 1, 0.00, 587.00, 'Evelyn Paul, D.G. Rossetti - Stories from Dante - 1910', 'img/book/book15.jpg', '2022-12-20 23:42:21', 1);
+INSERT INTO `t_book` VALUES (6, 1, 'book', 1, 0.00, 373.00, 'Tintin T23 - Tintin et les Picaros - Tirage Cocktail', 'img/book/book16.jpg', '2022-12-20 23:42:21', 1);
 
 -- ----------------------------
 -- Table structure for t_category
@@ -59,10 +59,10 @@ CREATE TABLE `t_category`  (
 -- ----------------------------
 -- Records of t_category
 -- ----------------------------
-INSERT INTO `t_category` VALUES (1, 'book', '书籍漫画');
-INSERT INTO `t_category` VALUES (2, 'watch', '手表');
-INSERT INTO `t_category` VALUES (3, 'stamp', '邮票及钱币');
-INSERT INTO `t_category` VALUES (4, 'wine', '葡萄酒及威士忌');
+INSERT INTO `t_category` VALUES (1, 'book', 'sách');
+INSERT INTO `t_category` VALUES (2, 'watch', 'Đồng hồ');
+INSERT INTO `t_category` VALUES (3, 'stamp', 'Tem');
+INSERT INTO `t_category` VALUES (4, 'wine', 'Rượu');
 
 -- ----------------------------
 -- Table structure for t_order
@@ -97,7 +97,7 @@ CREATE TABLE `t_stamp`  (
   `introduce` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `picture` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `state` int NOT NULL DEFAULT 1 COMMENT '1：表示未卖出\\n2：已卖出',
+  `state` int NOT NULL DEFAULT 1 ,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
@@ -122,7 +122,7 @@ CREATE TABLE `t_user`  (
   `address` varchar(300) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `bought_number` int NOT NULL DEFAULT 0,
   `auction_number` int NOT NULL DEFAULT 0,
-  `admin` int NOT NULL DEFAULT 1 COMMENT '0为管理员，1为普通用户',
+  `admin` int NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
@@ -131,6 +131,7 @@ CREATE TABLE `t_user`  (
 -- ----------------------------
 INSERT INTO `t_user` VALUES (1, 'huy', '1234', '18681698888', '54A tân lập 1 , hiệp phú , Q9', 1, 6, 0);
 INSERT INTO `t_user` VALUES (2, 'huy1', '123', '18681690000', 'Thủ đức', 0, 3, 1);
+INSERT INTO `t_user` VALUES (3, 'trung', '12345', '097987987', 'thủ đức', 0, 0, 1);
 
 -- ----------------------------
 -- Table structure for t_watch
@@ -146,7 +147,7 @@ CREATE TABLE `t_watch`  (
   `introduce` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `picture` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `state` int NOT NULL DEFAULT 1 COMMENT '1：表示未卖出\\\\n2：表示卖出，默认为1',
+  `state` int NOT NULL DEFAULT 1 ,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
@@ -154,9 +155,9 @@ CREATE TABLE `t_watch`  (
 -- Records of t_watch
 -- ----------------------------
 INSERT INTO `t_watch` VALUES (2, 1, 'watch', 0, 0.00, 2300.00, 'OysterDate Precision - 6694- 1960-1969', 'img/watch/app1.jpg', '2023-06-04 15:30:29', 1);
-INSERT INTO `t_watch` VALUES (3, 3, 'watch', 0, 0.00, 459.00, 'Eterna - Artena Lady - 2510.41.45.0273 - 女士 - 2011至现在', 'img/watch/app2.jpg', '2022-06-05 15:30:29', 1);
-INSERT INTO `t_watch` VALUES (4, 3, 'watch', 0, 0.00, 2068.00, 'Rapport London - Paramount Nine Watch Winder - W409 - 中性 - 2011至现在', 'img/watch/app3.jpg', '2022-12-20 15:30:29', 1);
-INSERT INTO `t_watch` VALUES (5, 2, 'watch', 0, 0.00, 2681.00, 'Chopard - St Moritz Gold/Steel - 8024 - 女士 - 2000-2010', 'img/watch/app4.jpg', '2022-12-20 15:30:29', 1);
+INSERT INTO `t_watch` VALUES (3, 1, 'watch', 0, 0.00, 459.00, 'Eterna - Artena Lady - 2510.41.45.0273 -', 'img/watch/app2.jpg', '2022-06-05 15:30:29', 1);
+INSERT INTO `t_watch` VALUES (4, 1, 'watch', 0, 0.00, 2068.00, 'Rapport London - Paramount Nine Watch Winder - W409 ', 'img/watch/app3.jpg', '2022-12-20 15:30:29', 1);
+INSERT INTO `t_watch` VALUES (5, 2, 'watch', 0, 0.00, 2681.00, 'Chopard - St Moritz Gold/Steel - 8024 - - 2000-2010', 'img/watch/app4.jpg', '2022-12-20 15:30:29', 1);
 
 -- ----------------------------
 -- Table structure for t_wine
@@ -172,7 +173,7 @@ CREATE TABLE `t_wine`  (
   `introduce` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `picture` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `state` int NOT NULL DEFAULT 1 COMMENT '1：表示未卖出\\n2：已卖出',
+  `state` int NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 

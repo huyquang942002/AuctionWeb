@@ -47,19 +47,14 @@ public class UserNameServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		String name = request.getParameter("username");
-		//测试从前台传过来的数据
-//		System.out.println(name);
-		//实例化对象
-		UserDao userDao=UserDaoFactory.getDaoInstance();
+				UserDao userDao=UserDaoFactory.getDaoInstance();
 		int i=0;
 		try {
 			i=userDao.JudgeName(name);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+						e.printStackTrace();
 		}
 		out.print(i);
-//		out.print("返回前台的数据");
 	}
 
 }

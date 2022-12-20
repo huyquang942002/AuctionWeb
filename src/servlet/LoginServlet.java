@@ -67,7 +67,6 @@ public class LoginServlet extends HttpServlet {
 			if (user != null) {				HttpSession session = request.getSession();
 				session.setAttribute("user", user);
 				Cookie cookie = new Cookie("user", URLEncoder.encode(username + "," + password, "UTF-8"));
-				//cookie两分钟过期
 				cookie.setMaxAge(120);
 				response.addCookie(cookie);
 				response.sendRedirect("index.jsp");
