@@ -92,7 +92,6 @@ public class OrderDaoImpl implements OrderDao{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		System.out.println(updateCount);
 		try {
 			connection.close();
 		} catch (SQLException e) {

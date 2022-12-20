@@ -76,7 +76,6 @@ public class StampDaoImpl implements StampDao{
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
 			while (rs.next()) {
-				// ç”Ÿæˆ�å®�ä½“
 				thisEntity = new Stamp();
 				thisEntity.setId(rs.getInt("id"));
 				thisEntity.setDate(rs.getTimestamp(("date")));

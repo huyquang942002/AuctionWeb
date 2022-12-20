@@ -3,10 +3,10 @@ package entity;
 
 
 public class User {
-	private int id;//intç±»å�‹
+	private int id;
 	private String name;
 	private String password;
-	private String phone;//æ³¨æ„�æ˜¯stringç±»å�‹
+	private String phone;
 	private String address;
 	private int bought_number;
 	private int auction_number;

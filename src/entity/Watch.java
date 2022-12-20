@@ -3,9 +3,8 @@ package entity;
 import java.sql.Timestamp;
 
 
-//ç»§æ‰¿äº�commodity
 public class Watch extends Commodity{
-	private int id;//intç±»å�‹
+	private int id;
 	private String type;
 	private float price;
 	private String introduce;

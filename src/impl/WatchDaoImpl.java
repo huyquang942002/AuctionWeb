@@ -99,7 +99,6 @@ public class WatchDaoImpl implements WatchDao{
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
 			while (rs.next()) {
-				// ç”Ÿæˆ�å®�ä½“
 				goods = new Watch();
 				goods.setId(rs.getInt("id"));
 				goods.setDate(rs.getTimestamp(("date")));

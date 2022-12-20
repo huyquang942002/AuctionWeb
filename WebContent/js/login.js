@@ -81,7 +81,7 @@ $(function(){
 
 	function checkAccount(username){
 		if (username == '') {
-			$('.num-err').removeClass('hide').find("em").text('请输入账户');
+			$('.num-err').removeClass('hide').find("em").text('Vui lòng nhập tài khoản');
 			return false;
 		} else {
 			$('.num-err').addClass('hide');
@@ -91,7 +91,7 @@ $(function(){
 
 	function checkPass(pass){
 		if (pass == '') {
-			$('.pass-err').removeClass('hide').text('请输入密码');
+			$('.pass-err').removeClass('hide').text('xin vui lòng nhập mật khẩu');
 			return false;
 		} else {
 			$('.pass-err').addClass('hide');
@@ -110,13 +110,13 @@ $(function(){
 	function checkPhone(phone){
 		var status = true;
 		if (phone == '') {
-			$('.num2-err').removeClass('hide').find("em").text('请输入手机号');
+			$('.num2-err').removeClass('hide').find("em").text('Vui lòng nhập số điện thoại');
 			return false;
 		}
 		var param = /^1[34578]\d{9}$/;
 		if (!param.test(phone)) {
 			$('.num2-err').removeClass('hide');
-			$('.num2-err').text('手机号不合法，请重新输入');
+			$('.num2-err').text('Số điện thoại không hợp lệ, vui lòng nhập lại');
 			return false;
 		}
 		$.ajax({
@@ -144,7 +144,7 @@ $(function(){
 
 	function checkPhoneCode(pCode){
 		if (pCode == '') {
-			$('.error').removeClass('hide').text('请输入验证码');
+			$('.error').removeClass('hide').text('vui lòng nhập mã xác nhận');
 			return false;
 		} else {
 			$('.error').addClass('hide');
@@ -287,7 +287,7 @@ $(function(){
 	            oEm.text(num2);
 	            if(num2==0){
 	                clearInterval(timer);
-	                oSend.text("重新发送验证码");
+	                oSend.text("Mã gửi lại");
 				    oSend.show();
 	                oEm.text("120");
 	                oTime.addClass("hide");

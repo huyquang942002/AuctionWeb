@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 
 public class Order {
-	private int id;//intç±»å�‹
+	private int id;
 	private int commodityId;
 	private float price;
 	private int winnerId;

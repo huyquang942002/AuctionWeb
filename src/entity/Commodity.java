@@ -13,7 +13,6 @@ public class Commodity {
 	private int winnerId;
 	private int userId;
 	private int state;
-	//å•†å“�ç�„id
 	private int commodityId;
 	
 	

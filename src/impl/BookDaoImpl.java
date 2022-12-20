@@ -73,7 +73,7 @@ public class BookDaoImpl implements BookDao{
 		}
 		return false;
 	}
-// hiện danh sách các sách có trong líut
+
 	@Override
 	public List getBookAll(){
 		// TODO Auto-generated method stub

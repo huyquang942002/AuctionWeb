@@ -225,8 +225,7 @@ public class CommodityDaoImpl implements CommodityDao {
 		return ListAll;
 	}
 	
-	// æ¨¡ç³�æŸ¥è¯¢
-	public List fuzzySerchWineList(String keyword) {
+		public List fuzzySerchWineList(String keyword) {
 		List<Commodity> ListAll = new ArrayList<Commodity>();
 		String sql = "select * from t_wine where (category like '%" + keyword + "%')or(introduce like '%" + keyword
 				+ "%')";
