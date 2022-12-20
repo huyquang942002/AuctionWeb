@@ -154,7 +154,6 @@ public class UserDaoImpl implements UserDao {
 		return user;
 	}
 
-	// ç™»å½•æ“�ä½œ
 	public User login(String username, String password) throws Exception {
 		User resultUser = null;
 		String sql = "select * from t_user where name=? and password=?";
@@ -176,7 +175,7 @@ public class UserDaoImpl implements UserDao {
 		return resultUser;
 	}
 
-		public int register(String username, String password) {
+		public int register(String username, String password, String phone , String address) {
 		int updateCount = 0;
 		try {
 			String querySql = "select * from t_user where name='" + username + "'";
@@ -186,10 +185,12 @@ public class UserDaoImpl implements UserDao {
 				connection.close();
 				return 1;
 			} else {
-				String sql = "insert into t_user(name,password) values(?,?)";
+				String sql = "insert into t_user(name,password,phone,address) values(?,?,?,?)";
 				ps = connection.prepareStatement(sql);
 				ps.setString(1, username);
 				ps.setString(2, password);
+				ps.setString(3, phone);
+				ps.setString(4, address);
 				updateCount = ps.executeUpdate();
 				System.out.println(updateCount);
 				connection.close();
@@ -366,6 +367,8 @@ public class UserDaoImpl implements UserDao {
 		}
 		return false;
 	}
+
+	
 	
 	
 }

@@ -17,7 +17,7 @@ if(session.getAttribute("user")==null){
 <div><a href="<%=path%>"><font size="+2">Trang chủ</a></font> </div><br>
 <br><br>
 <div style="width: 60%; height: 5%; text-align: center;">         
-<font size="5">Thông tin sản phẩm đấu giá: </font><font size="6" color="red" id="time"></font>
+<font size="5">Thời gian đấu giá còn lại: </font><font size="6" color="red" id="time"></font>
 </div><br><br>
 <div style="margin:0 auto; width: 60%;height: 55%; background-color: rgb(255,255,255);">
 <div style="float: left; width:25%; height:100%; margin: 50 60;">

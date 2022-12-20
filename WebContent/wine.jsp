@@ -32,7 +32,7 @@ List<User> users = (List<User>)request.getAttribute("users");
 			<%
 				if (session.getAttribute("user") == null) {
 			%>  
-			<a href="<%=path%>/login.jsp"><font color="#A6686A">Xin chào, vui lòng đăng nhập !! </font></a>
+			<a href="<%=path%>/login.jsp"><font color="#A6686A">Login !! </font></a>
 			<%
 				} else {
 			%>  
@@ -49,7 +49,7 @@ List<User> users = (List<User>)request.getAttribute("users");
 	    <div class="serchBox">
 		<form action="SerchServlet" name="search" class="search" method="post" ><br>
 			<input type="text" id="serchInput" name="serchInput" placeholder="tìm kiếm"/>
-			<input type="submit" id="serchBtn" value="搜索" onclick=" return SumbitJudge()"/>
+			<input type="submit" id="serchBtn" value="Search" onclick=" return SumbitJudge()"/>
 		</form>
 		</div>
 	</div>

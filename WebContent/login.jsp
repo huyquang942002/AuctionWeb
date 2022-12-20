@@ -32,12 +32,12 @@ if(error == null){
 </head>
 <body onload="errorLogin()">
 <div id="ajax-hook"></div>
-<div class="wrap" style="background: url(img/background.jpg) no-repeat center;">
+<div class="wrap" style="background: url(img/background1.jpg) no-repeat center;">
     <div class="wpn">
         <div class="form-data pos">
             <a href="index.jsp"><img src="img/logo.png" class="head-logo"></a>
             <div class="change-login">
-                <p class="account_number on">Login</p>
+                <p class="account_number on">Đăng Nhập</p>
 <!--                 <p class="message">SMS login</p> -->
             </div>
             <form action="LoginServlet" method="post">
@@ -58,12 +58,8 @@ if(error == null){
                 <a href="register.jsp" class="z">Register an account</a>
 <!--                 <a href="./getpass.jsp" class="y">Forgot password</a> -->
             </div>
-            <button class="lang-btn off log-btn">Log in</button>
-            <div class="third-party">
-                <a href="#" class="log-qq icon-qq-round"></a>
-                <a href="#" class="log-qq icon-weixin"></a>
-                <a href="#" class="log-qq icon-sina1"></a>
-            </div>
+            <button class="lang-btn off log-btn">Đăng Nhập</button>
+            
             </form>
             <p class="right">online auction system by © 2022</p>
         </div>

@@ -26,7 +26,7 @@ public interface UserDao {
 
 	public User login(String username,String password) throws Exception;
 
-	public int register(String username, String password);
+	public int register(String username, String password, String phone, String address);
 
 	public User GetByName(String username);
 

@@ -27,7 +27,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		var s = document.getElementById("s");
   		s.innerText = i;
   		i--;
-  		//定时的操作：
   		//window.setTimeout('',1000) window.setInterval(); 
 		window.setTimeout('time()', 1000); 
   	}
@@ -40,9 +39,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <%-- 	    	<img src="<%=path %>/application/img/registerOk.jpg" style="width: 100%;height: 100%;"> --%>
 	    </div>
 	    <div style="float: left;margin-top: 13%;text-align: center;">
-	    <font size="6" color="#A2A778">注册成功啦！</font><font size="6" color="red" id="s">5</font><font size="6" color="#A2A778">秒后自动跳转到登陆页面</font>
+	    <font size="6" color="#A2A778">Đăng ký thành công！</font><font size="6" color="red" id="s">5</font><font size="6" color="#A2A778">Tự động chuyển đến trang đăng nhập trong vài giây</font>
 	    <br><br><br>
-	    <a href="<%=path %>/login.jsp" ><font size="4" >未跳转？点击此处进入登陆页面</font></a>
+	    <a href="<%=path %>/login.jsp" ><font size="4" >Không được chuyển hướng? Nhấn vào đây để đi đến trang chủ</font></a>
 	    </div>
     </div>
     <%response.setHeader("refresh","5;URL=login.jsp"); %>

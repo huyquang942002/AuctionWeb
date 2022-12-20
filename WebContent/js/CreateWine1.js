@@ -43,7 +43,6 @@ function timeStampDate(time){
 }
 
 function toDays(ss) {
-	//转换为Int
 	var s=parseInt(ss % 60); 
 	var mi=parseInt((ss - s) / 60 % 60);
 	var h=parseInt(((ss - s) / 60 - mi) / 60 % 24); 

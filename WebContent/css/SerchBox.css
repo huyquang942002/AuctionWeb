@@ -29,15 +29,14 @@ html,body
 .serchBox input
 {
 	width: 40%;
-	height: 43px;
+	height: 46px;
 	outline: none;
 	font-size: 15px;
 /* 	border: none */
 }
 #serchInput
 {
-	border: 1px solid #000;
-	border-radius:3px;
+	border: 2px solid #F03726;
 }
 #serchBtn
 {
@@ -45,11 +44,10 @@ html,body
 /* 	right:26%; */
 	width: 10%;
 	height: 46px;
-	border:1px;
-	border-radius:3px;
+	border: 0px none;
 /* 	float: center; */
-	background: #008000;
-	color: white;
+	background: #F03726;
+	color: #F5F5F2;
 	font-size: 15px;
 	cursor: pointer;
 }

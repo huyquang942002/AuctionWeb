@@ -25,9 +25,9 @@ List<Book> goodss = (List<Book>)request.getAttribute("goodss");
 <head>
 <meta charset="UTF-8">
 <title>Auction Web</title>
-<link rel="stylesheet" href="css/HomePage.css" type="text/css">
-<link rel="stylesheet" href="css/SerchBox.css" />
-<link rel="stylesheet" href="css/Carousel.css" />
+<link rel="stylesheet" type="text/css" href="css/HomePage.css" >
+<link rel="stylesheet"  href="css/SerchBox.css" />
+<link rel="stylesheet"  href="css/Carousel.css" />
 
 <script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
 <script type="text/javascript" src="js/index.js" ></script>
@@ -38,12 +38,12 @@ List<Book> goodss = (List<Book>)request.getAttribute("goodss");
 			<%
 				if (session.getAttribute("user") == null) {
 			%>  
-			<a href="<%=path%>/login.jsp"><font color="#fff">Đăng nhập</font></a>
+			<a href="<%=path%>/login.jsp"><font color="#FFFFFF">Đăng nhập</font></a>
 			<%
 				} else {
 			%>  
-			        <a href="<%=path %>/UserServlet?user_id=<%=((User)session.getAttribute("user")).getId() %>"><font color="#fff">Profile - ${user.name} </font></a> 
-					<a href="<%=path%>/IndexServlet?login=no"><font color="#fff"><font color="#fff">Đăng xuất</font> </font></a>
+			        <a href="<%=path %>/UserServlet?user_id=<%=((User)session.getAttribute("user")).getId() %>"><font color="#FFFFFF">Welcome ${user.name} </font></a> 
+					<a href="<%=path%>/IndexServlet?login=no"><font color="#FFFFFF"><font color="#FFFFFF">Đăng xuất</font> </font></a>
 			<%
 				}
 			%>
@@ -96,7 +96,7 @@ function SumbitJudge() {
 		</div>
 	</div>
 	<div class="popular">
-		<p class="PopularP1">Phổ biến</p>
+		<p class="PopularP1">Danh Mục Sản Phẩm</p>
 		<div class="CategoryBox">
 		    <a href="watch.jsp">
 			<div class="Category1">

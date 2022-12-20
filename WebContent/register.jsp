@@ -25,7 +25,7 @@ if(error == null){
 </head>
 <body onload="registerError()">
     
-    <div class="wrap" style="background: url(img/background.jpg) no-repeat center;">
+    <div class="wrap" style="background: url(img/background1.jpg) no-repeat center;">
         <div class="wpn">
             <div class="form-data pos">
                 <a href="index.jsp"><img src="img/logo.png" class="head-logo"></a>
@@ -36,6 +36,14 @@ if(error == null){
                         <input type="text" id="username" autocomplete="off" name="username" onchange="registerUserName()">
                         <span class="tel-warn tel-err" style="display:none;" id="msg"><em>tên đăng kí đã được sử dụng</em><i class="icon-warn"></i></span>
                         <span class="tel-warn tel-err "><font id="name_error"></font></span>
+                    </p>
+                    <p class="p-input pos " id="phone">
+                        <label for="passport">nhập số điện thoại:</label>
+                        <input type="text" id="phone" name="phone">
+                    </p>
+                    <p class="p-input pos " id="address">
+                        <label for="passport">nhập địa chỉ</label>
+                        <input type="text" id="address" name="address">
                     </p>
                     <p class="p-input pos " id="pass">
                         <label for="passport">nhập mật khẩu</label>
@@ -51,7 +59,7 @@ if(error == null){
                     <button class="lang-btn" id="submit" type="submit">Đăng ký</button>
                 </form>
                 <div class="bottom-info">Bạn đã có tài khoản ?<a href="login.jsp">Đăng nhập ngay bây giờ</a></div>
-                <p class="right"> by © 2019</p>
+                <p class="right"> by © 2023</p>
             </div>
         </div>
     </div>
@@ -60,13 +68,7 @@ if(error == null){
 <!--     <script src="js/reg.js"></script> -->
     <script type="text/javascript">
     
-//     $.validator.setDefaults({
-// 		    submitHandler: function() {
-// // 		      alert("提交事件!");
-// 		    }
-// 		});
 		function format() {
-		// 在键盘按下并释放及提交后验证提交表单
 		  $("#myform").validate({
 			    rules: {
 			     
@@ -86,21 +88,20 @@ if(error == null){
 			    messages: {
 			    
 			    	password: {
-			        required: "请输入密码",
-			        minlength: "密码长度不能小于 5 位",
-			        maxlength:"密码长度不能大于10位"
+			        required: "Xin vui lòng nhập mật khẩu",
+			        minlength: "Vui lòng nhập mật khẩu trên 5 ký tự",
+			        maxlength:"Độ dài mật khẩu không được lớn hơn 10 ký tự"
 			      },
 			      username: {
-				        required: "请用户名",
-				        minlength: "用户名长度不能小于 1 位",
-				        maxlength:"用户名长度不能大于5位"
+				        required: "Xin vui lòng tên người dùng",
+				        minlength: "Độ dài tên người dùng không được nhỏ hơn 1 chữ số",
+				        maxlength:"Độ dài tên người dùng không được lớn hơn 5 ký tự"
 				      }
 			  
 			    }
 			});
 		};
     
-    //js异步请求验证用户名的api（UserNameServlet）
  		function registerUserName(){
  				var request = new XMLHttpRequest();
  				var username = document.getElementById("username").value;
@@ -109,11 +110,8 @@ if(error == null){
  				request.open("POST",url,true);
  				request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
  				request.onreadystatechange=function(){
-		        	//获取返回的验证码
 		        	if(request.readyState==4&&request.status==200||request.status==0){
-// 		        		alert("后台返回的返回值： "+request.responseText);
 		        		if(request.responseText == "1"){
-		        			//用户已存在
 		        			msg.style.display = "";
 		        		}else{
 		        			msg.style.display = "none";

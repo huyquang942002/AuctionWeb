@@ -69,10 +69,8 @@ function SumbitJudge() {
 	return true;
 }
 </script>
-	<!-- 导航栏 -->
 	<div class="Navigation1">
 		<nav>
-			<!--超链接标签-->
 			<a href="<%=path%>/index.jsp">Trang chủ</a>
 			<a href="<%=path%>/watch.jsp">Đồng hồ</a>
 			<a href="<%=path%>/stamp.jsp">Tem</a>
@@ -83,10 +81,10 @@ function SumbitJudge() {
 
 	<div class="watchBox">
 		<div class="h1Box">
-			<p class="h1">kết quả tìm kiếm</p>
+			<p class="h1">Kết Quả Tìm Kiếm : </p>
 		</div>
 		<div class="watchBox2" id="watchBox2">
-			<p class="h2">Duyệt</p>
+			<p class="h2">Sản Phẩm : </p>
 			<%
 			if(!commodity.isEmpty()){
 			for(int i=0;i<commodity.size();i++){
@@ -103,7 +101,7 @@ function SumbitJudge() {
                         SimpleDateFormat myFmt=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	                  %>
                <p><%=commodity.get(i).getIntroduce() %></p>
-               <p class="p2" id="" style="position: absolute;border: 2px;">thời gian còn lại:<%=myFmt.format(TotalMS)%></p>
+               <p class="p2" id="" style="position: absolute;border: 2px;">Thời Gian Hết Hạn:<%=myFmt.format(TotalMS)%></p>
           </div>
                </a>
             <%} } %>

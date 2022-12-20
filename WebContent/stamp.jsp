@@ -32,22 +32,16 @@ List<User> users = (List<User>)request.getAttribute("users");
 			<%
 				if (session.getAttribute("user") == null) {
 			%>  
-<!-- 			<a href="login.jsp">您好,请登录</a> -->
-			<a href="<%=path%>/login.jsp"><font color="#A6686A">Xin chào, vui lòng đăng nhập </font></a>
-<%-- 			<a href="<%=path%>/application/reg.jsp"><font color="red">Đăng kí miễn phí</font></a> --%>
+			<a href="<%=path%>/login.jsp"><font color="#A6686A">Login </font></a>
 			<%
 				} else {
 			%>  
-<%-- 			<a href="<%=path%>/user.jsp">个人中心</a> --%>
 			        <a href="<%=path %>/UserServlet?user_id=<%=((User)session.getAttribute("user")).getId() %>"><font color="#A6686A">Chào mừng,${user.name} </font></a> 
 			<a href="<%=path%>/IndexServlet?login=no"><font color="#A6686A"><font color="#D6686A">đăng xuất</font> </font></a>
 			<%
 				}
 			%>
 
-			<!-- 			<a>个人中心</a> -->
-<!-- 			<a href="#">个人中心</a> -->
-<!-- 			<a href="login.jsp">登录</a> -->
 			<a href="index.jsp">Welcome</a>
 		</nav>
 	</div>
