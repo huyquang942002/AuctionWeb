@@ -30,7 +30,7 @@ users = (List)request.getAttribute("users");
         <div class="top-title">
             <div class="top-title-left">
                 <a href="<%=path %>/admin/index.jsp" style="text-decoration:none;">
-                <font size="6" color="#191970" class="top-title-text">Trở lại</font>
+                <font size="6" color="#191970" class="top-title-text">Quản lí sản phẩm</font>
                 </a>
             </div>
         </div>
@@ -165,6 +165,8 @@ users = (List)request.getAttribute("users");
                         	  thisPage=1;
                           }
                           %>
+                          <p><%=thisMaxPage%>Trang</p>
+                          <p>Trang<%=thisPage%></p>
                           </div>
                         </li>
                       </ul>

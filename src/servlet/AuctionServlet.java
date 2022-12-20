@@ -65,6 +65,7 @@ public class AuctionServlet extends HttpServlet {
 //		response.sendRedirect("auction.jsp");
 		if (type.equals("book")) {
 			try {
+				
 				Book thisEntity = getBook(request, response, id);
 				Long time = getBookTime(id);
 				User user=getUser(request, response,thisEntity.getUserId());
@@ -179,11 +180,12 @@ public class AuctionServlet extends HttpServlet {
 		WatchDao thisDao=WatchDaoFactory.getWatchDaoInstance();
 		thisEntity = thisDao.getById(id);
 		if(thisEntity==null) {
-			System.out.println("Không có sản phẩm ! ");
+			System.out.println("èŽ·å�–ç‰©å“�å¤±è´¥");
 		}
 		return thisEntity;
 	}
 
+	//æ ¹æ�®idèŽ·å�–bookä¿¡æ�¯
 	public Book getBook(HttpServletRequest request, HttpServletResponse response,int id){
 		Book thisEntity = null;
 		BookDao thisDao=BookDaoFactory.getBookDaoInstance();
@@ -194,10 +196,11 @@ public class AuctionServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		if(thisEntity==null) {
-			System.out.println("Không có sản phẩm !");
+			System.out.println("èŽ·å�–ç‰©å“�å¤±è´¥");
 		}
 		return thisEntity;
 	}
+	//èŽ·å�–ç‰©å“�æ‰€æœ‰è€…
 	public User getUser(HttpServletRequest request, HttpServletResponse response,int user_id){
 		User user = null;
 		UserDao userdao = UserDaoFactory.getDaoInstance();
@@ -223,12 +226,14 @@ public class AuctionServlet extends HttpServlet {
 //		doGet(request, response);
 //		PrintWriter out = response.getWriter();
 
-		int user_id = Integer.valueOf(request.getParameter("user_id"));
-		int winner_id = Integer.valueOf(request.getParameter("winner_id"));
+		// ä¿®æ”¹å½“å‰�ç«žæ‹�ç‰©å“�çš„æœ€é«˜ä»·ä¸Žå‡ºæœ€é«˜ä»·çš„ç”¨æˆ·id
+		int user_id = Integer.valueOf(request.getParameter("user_id"));// å½“å‰�ç‰©å“�çš„id
+		int winner_id = Integer.valueOf(request.getParameter("winner_id"));// æœ€é«˜ä»·ç”¨æˆ·idï¼Œä¹Ÿå°±æ˜¯å½“å‰�ç™»å½•çš„å�‚ä¸Žç«žæ‹�çš„ç”¨æˆ·
 		String type = String.valueOf(request.getParameter("type"));
 		int goods_id = Integer.valueOf(request.getParameter("goods_id"));
 		int max_price = Integer.valueOf(request.getParameter("max_price"));
 		
+		//èŽ·å�–ç‰©å“�æ‹¥æœ‰è€…
 		User user = getUser(request, response,user_id);
 //		if (winner_id!=user.getId()) {
 //			//+1
@@ -238,6 +243,8 @@ public class AuctionServlet extends HttpServlet {
 		// ä¿®æ”¹
 		updateMax_price(type,goods_id, max_price, winner_id);
 		if (type.equals("book")) {
+			//æ‰§è¡Œbookçš„æ“�ä½œ
+			// è¿”å›žè¯¦æƒ…é¡µé�¢
 			Book thisEntity = getBook(request, response, goods_id);
 			float maxPrice=thisEntity.getMaxPrice();
 //			System.out.println("maxPrice:"+maxPrice);
@@ -256,6 +263,8 @@ public class AuctionServlet extends HttpServlet {
 		}
 		//watch
 		if (type.equals("watch")) {
+			//æ‰§è¡Œwatchçš„æ“�ä½œ
+			// è¿”å›žè¯¦æƒ…é¡µé�¢
 			Watch thisEntity = getWatch(request, response, goods_id);
 			float maxPrice=thisEntity.getMaxPrice();
 //			System.out.println("maxPrice:"+maxPrice);
@@ -274,6 +283,8 @@ public class AuctionServlet extends HttpServlet {
 		}
 		// stamp
 		if (type.equals("stamp")) {
+			// æ‰§è¡Œwatchçš„æ“�ä½œ
+			// è¿”å›žè¯¦æƒ…é¡µé�¢
 			Stamp thisEntity = getStamp(request, response, goods_id);
 			float maxPrice = thisEntity.getMaxPrice();
 //					System.out.println("maxPrice:"+maxPrice);
@@ -292,6 +303,8 @@ public class AuctionServlet extends HttpServlet {
 		}
 		//wine
 		if (type.equals("wine")) {
+			// æ‰§è¡Œwatchçš„æ“�ä½œ
+			// è¿”å›žè¯¦æƒ…é¡µé�¢
 			Wine thisEntity = getWine(request, response, goods_id);
 			float maxPrice = thisEntity.getMaxPrice();
 //					System.out.println("maxPrice:"+maxPrice);
@@ -310,6 +323,7 @@ public class AuctionServlet extends HttpServlet {
 		}
 	}
 
+//ä¿®æ”¹æ‹�å�–å“�å½“å‰�æœ€é«˜ä»·ä¸Žæœ€é«˜ä»·ç”¨æˆ·idçš„ä¸šåŠ¡
 	public void updateMax_price(String type,int goods_id, int max_price, int winner_id) {
 		if (type.equals("book")) {
 			BookDao goodsdao = BookDaoFactory.getBookDaoInstance();
@@ -330,6 +344,7 @@ public class AuctionServlet extends HttpServlet {
 	}
 //
 	
+    //èŽ·å�–çŽ°åœ¨æ—¶é—´ä¸Žç»“æ�Ÿæ—¶é—´çš„æ—¶é—´å·®
 	private long getBookTime(int id){
 		Long time = null;
 		BookDao bookDao=BookDaoFactory.getBookDaoInstance();

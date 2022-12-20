@@ -37,6 +37,14 @@ if(error == null){
                         <span class="tel-warn tel-err" style="display:none;" id="msg"><em>tên đăng kí đã được sử dụng</em><i class="icon-warn"></i></span>
                         <span class="tel-warn tel-err "><font id="name_error"></font></span>
                     </p>
+                    <p class="p-input pos " id="phone">
+                        <label for="passport">nhập số điện thoại:</label>
+                        <input type="text" id="phone" name="phone">
+                    </p>
+                    <p class="p-input pos " id="address">
+                        <label for="passport">nhập địa chỉ</label>
+                        <input type="text" id="address" name="address">
+                    </p>
                     <p class="p-input pos " id="pass">
                         <label for="passport">nhập mật khẩu</label>
                         <input type="password" id="pass1" name="password">

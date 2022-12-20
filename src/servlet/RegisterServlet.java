@@ -49,20 +49,18 @@ public class RegisterServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String name = request.getParameter("username");
 		String password = request.getParameter("password");
+		String phone = request.getParameter("phone");
+		String address = request.getParameter("address");
 //		System.out.println(name);
 //		System.out.println(password);
 		User user = null;
 //		PrintWriter out = response.getWriter();
 		
 		UserDao userdao = UserDaoFactory.getDaoInstance();
-		//注册用户
 		int bb=0;
-		//插入数据库
-		bb =userdao.register(name, password);
+		bb =userdao.register(name, password,phone,address);
 		if (bb ==0) {
-			// 注册成功
-//			 System.out.println("yes");
-			response.sendRedirect("registerSuccess.jsp");
+			response.sendRedirect("login.jsp");
 		} else {
 			// System.out.println("no");
 			response.sendRedirect("register.jsp?register=error");

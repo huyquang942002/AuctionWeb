@@ -44,7 +44,7 @@ public class UserManageServlet extends HttpServlet {
 		List<User> users = new ArrayList<User>();
 		users = thisdao.getAll();
 		if (users != null) {
-			request.setAttribute("users", users);
+						request.setAttribute("users", users);
 			request.getRequestDispatcher("admin/userManage.jsp").forward(request, response);
 		} else {
 		}
@@ -57,20 +57,17 @@ public class UserManageServlet extends HttpServlet {
 		if (request.getParameter("changeAdmin").equals("ok")) {
 			UserDao thisdao =UserDaoFactory.getDaoInstance();
 			if (thisdao.changeAdmin(Integer.parseInt(request.getParameter("userId")))) {
-				System.out.println("æ›´æ–°ç”¨æˆ·æ�ƒé™�æˆ�åŠŸ");
+				System.out.println("");
 			} else {
-				System.out.println("æ›´æ–°ç”¨æˆ·æ�ƒé™�å¤±è´¥");
+				System.out.println("");
 			}
 		}
-
 		if (request.getParameter("changeAdmin").equals("no")) {
 			UserDao thisdao = UserDaoFactory.getDaoInstance();
 			if (thisdao.changeOrdinary(Integer.parseInt(request.getParameter("userId")))) {
-				// æ›´æ–°æˆ�åŠŸ
-				System.out.println("æ›´æ–°ç”¨æˆ·æ�ƒé™�æˆ�åŠŸ");
+				System.out.println("");
 			} else {
-				// æ›´æ–°å¤±è´¥
-				System.out.println("æ›´æ–°ç”¨æˆ·æ�ƒé™�å¤±è´¥");
+				System.out.println("");
 			}
 		}
 	}
