@@ -3,7 +3,7 @@ body{
     overflow:hidden; 
     margin:0px; 
     padding:0px;
-    background-image: url(../img/admin.jpg);
+    background-image: url(../img/mainbackground.jpg);
     background-size:100%;
 }
 .top-parent{

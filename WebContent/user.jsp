@@ -22,14 +22,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="top-title">
         <div class="top-title-left">
             <a href="<%=path%>/user.jsp">
-               <font size="5" color="#5de" class="top-title-text">Trung tâm cá nhân</font>
+               <font size="5" color="#fff" class="top-title-text">Trung tâm cá nhân</font>
             </a>
         </div>
         <div class="top-title-center" style="display: none" id="adminDiv">
-             <a href="<%=path %>/admin/index.jsp"><font size="5" color="#e56" class="top-title-text">Trang Admin</font></a> 
+             <a href="<%=path %>/admin/index.jsp"><font size="5" color="#fff" class="top-title-text">Trang Admin</font></a> 
         </div>
         <div class="top-title-right">
-            <a href="<%=path%>"><font size="5" color="#e56" class="top-title-text">Trang Chủ</font></a>
+            <a href="<%=path%>"><font size="5" color="#fff" class="top-title-text">Trang Chủ</font></a>
         </div>
     </div>
 </div>
@@ -44,12 +44,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
                 <div class="content-top-left-right">
                     <div class="content-top-left-right-name">
-                        <font size="5" color="#554">User: ${user.name }</font>
+                        <font size="5" color="#fff">User: ${user.name }</font>
                         <img src="img/modifyUserName.jpg" width="15px" height="15px" onclick="diplayModifyName()">
                     </div>
                     <div class="content-top-left-right-id">
-                        <font size="4" color="#554">PID:</font>
-                        <font size="4" color="#e33">${user.id }</font>
+                        <font size="4" color="#fff">PID:</font>
+                        <font size="4" color="#fff">${user.id }</font>
                     </div>
                 </div>
             </div>

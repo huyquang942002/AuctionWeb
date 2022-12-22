@@ -36,7 +36,8 @@ html,body
 }
 #serchInput
 {
-	border: 2px solid #F03726;
+	border: 2px solid #03c04a;
+	border-radius: 3px;
 }
 #serchBtn
 {
@@ -44,9 +45,10 @@ html,body
 /* 	right:26%; */
 	width: 10%;
 	height: 46px;
-	border: 0px none;
+	border: none;
+	border-radius: 3px;
 /* 	float: center; */
-	background: #F03726;
+	background: #03c04a;
 	color: #F5F5F2;
 	font-size: 15px;
 	cursor: pointer;
